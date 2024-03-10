@@ -1,6 +1,6 @@
 import UIKit
 
-final class FetchView: UIView, ViewProtocol {
+final class FetchView: View {
     
     var viewState: ViewData = .initial { didSet { setNeedsLayout() } }
     
