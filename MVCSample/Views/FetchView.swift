@@ -4,6 +4,8 @@ final class FetchView: UIView, ViewProtocol {
     
     var viewState: ViewData = .initial { didSet { setNeedsLayout() } }
     
+    weak var controller: FetchControllerProtocol?
+    
     private lazy var jokeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -31,9 +33,6 @@ final class FetchView: UIView, ViewProtocol {
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         return activityIndicator
     }()
-    
-    
-    weak var controller: FetchControllerProtocol?
     
     init(controller: FetchControllerProtocol?) {
         super.init(frame: .zero)
